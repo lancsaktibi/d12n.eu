@@ -9,5 +9,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.18",
+    "@types/react": "^18.2.55",
+    "typescript": "^5.3.3"
   }
 }
