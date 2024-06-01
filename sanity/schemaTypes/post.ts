@@ -26,6 +26,12 @@ export default defineType({
       to: {type: 'author'},
     }),
     defineField({
+      name: 'lang',
+      title: 'Language',
+      type: 'reference',
+      to: {type: 'language'},
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -57,7 +63,6 @@ export default defineType({
       type: 'blockContent',
     }),
   ],
-
   preview: {
     select: {
       title: 'title',
