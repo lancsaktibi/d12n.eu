@@ -5,6 +5,7 @@ The website aims to deliver content in the field of political science, with a pr
 *node.js* - a cross-platform, open-source JavaScript runtime environment\
 *react.js* - a free and open-source front-end JavaScript library\
 *next.js* - an open-source web development framework for react.js\
+*tailwindcss.com* - an open-source web-design library using the cascading style sheets language\
 *TypeScript* - a free and open-source language that adds static typing to JavaScript\
 *sanity.io* - a headless content management system
 ## development environment
