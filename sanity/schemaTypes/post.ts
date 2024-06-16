@@ -22,14 +22,12 @@ export default defineType({
     defineField({
       name: 'author',
       title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
+      type: 'string',
     }),
     defineField({
       name: 'lang',
       title: 'Language',
-      type: 'reference',
-      to: {type: 'language'},
+      type: 'string',
     }),
     defineField({
       name: 'mainImage',
@@ -49,8 +47,7 @@ export default defineType({
     defineField({
       name: 'categories',
       title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      type: 'string',
     }),
     defineField({
       name: 'publishedAt',
