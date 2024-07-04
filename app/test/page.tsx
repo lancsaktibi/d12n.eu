@@ -1,6 +1,7 @@
 import { SanityDocument } from "@sanity/client";
 import { startQuery } from "../../sanity/lib/queries";
 import { sanityFetch } from "../../sanity/lib/sanityFetch";
+import { PortableText } from '@portabletext/react'
 
 const Page = async () => {
     const post = await sanityFetch<SanityDocument>({
@@ -8,10 +9,8 @@ const Page = async () => {
     });
 
     return (
-            <div>
-                <div>{post.title}</div>
-                <div>{post.body[0].text}</div>
-                <div>{JSON.stringify(post)}</div>
+            <div>                
+                <PortableText value={post.body} />
             </div>
 
     );
