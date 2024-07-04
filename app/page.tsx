@@ -1,7 +1,19 @@
-export default function Page() {
+import { SanityDocument } from "@sanity/client";
+import { startQuery } from "../sanity/lib/queries";
+import { sanityFetch } from "../sanity/lib/sanityFetch";
+import { PortableText } from '@portabletext/react'
+
+const Page = async () => {
+    const post = await sanityFetch<SanityDocument>({
+        query: startQuery,
+    });
+
     return (
-      <p className="text-3xl font-bold italic">
-        Hello, NextJS!
-      </p>
-    )
-  }
+            <div>            
+                <PortableText value={post.body} />
+            </div>
+
+    );
+};
+
+export default Page;
