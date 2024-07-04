@@ -8,7 +8,7 @@ const Page = async () => {
     });
 
     return (
-            <div>{post.body}</div>
+            <div>{post}</div>
     );
 };
 
