@@ -10,6 +10,8 @@ const Page = async () => {
     return (
             <div>
                 <div>{post.title}</div>
+                <div>{post.body[0].text}</div>
+                <div>{JSON.stringify(post)}</div>
             </div>
 
     );
