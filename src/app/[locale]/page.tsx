@@ -3,12 +3,14 @@ import { startQuery } from "../../sanity/lib/queries";
 import { sanityFetch } from "../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react'
 import { getTranslations } from "next-intl/server";
+import {unstable_setRequestLocale} from 'next-intl/server';
 
-const Page = async () => {
+const Page = async ({params: {locale}}) => {
     const post = await sanityFetch<SanityDocument>({
         query: startQuery,
     });
 
+    unstable_setRequestLocale(locale);
     const t = await getTranslations('Index');
 
     return (
