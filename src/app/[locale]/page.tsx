@@ -1,12 +1,15 @@
 import { SanityDocument } from "@sanity/client";
-import { startQuery } from "../sanity/lib/queries";
-import { sanityFetch } from "../sanity/lib/sanityFetch";
+import { startQuery } from "../../sanity/lib/queries";
+import { sanityFetch } from "../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react'
+import { getTranslations } from "next-intl/server";
 
 const Page = async () => {
     const post = await sanityFetch<SanityDocument>({
         query: startQuery,
     });
+
+    const t = await getTranslations('Index');
 
     return (
         <div className="flex justify-center">
@@ -18,6 +21,9 @@ const Page = async () => {
                         </h2>
                         <div className="mt-2 text-lg leading-8 text-gray-600">
                             <PortableText value={post.body} />
+                        </div>
+                        <div className="mt-2 text-lg leading-8 text-gray-600">
+                            {t('title')}
                         </div>
                     </div>
                 </div>

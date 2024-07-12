@@ -6,6 +6,7 @@ The website aims to deliver content in the field of political science, with a pr
 *react.js* - a free and open-source front-end JavaScript library\
 *next.js* - an open-source web development framework for react.js\
 *tailwindcss.com* - an open-source web-design library using the cascading style sheets language\
+*next-intl* - an internationalisation (i18n) library for next.js\
 *TypeScript* - a free and open-source language that adds static typing to JavaScript\
 *sanity.io* - a headless content management system
 ## development environment
@@ -14,4 +15,4 @@ The website aims to deliver content in the field of political science, with a pr
 *netlify.com* - a development platform with build, deploy and serverless backend services for web applications
 ## customisations
 - the github codespace uses the *javascript-node* devcontainer as the development environment
-- for sanity.io, a custom *schemaType* was added to the default blog schema: *language selector*
+- for sanity.io, a *Language* field was added to the blog schema
