@@ -6,12 +6,13 @@ import { getTranslations } from "next-intl/server";
 import {unstable_setRequestLocale} from 'next-intl/server';
 
 const Page = async ({params: {locale}}) => {
-    const post = await sanityFetch<SanityDocument>({
-        query: startQuery,
-    });
-
     unstable_setRequestLocale(locale);
-    const t = await getTranslations('Index');
+    const [post, t] = await Promise.all([
+        sanityFetch<SanityDocument>({
+            query: startQuery,
+        }),
+        getTranslations('Index')
+    ]) 
 
     return (
         <div className="flex justify-center">

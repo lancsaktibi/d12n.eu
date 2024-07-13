@@ -15,8 +15,9 @@ export default async function LocaleLayout({
     children: React.ReactNode;
     params: {locale: string};
   }) {
-    const messages = await getMessages();
     unstable_setRequestLocale(locale);
+    const messages = await getMessages();
+   
     
     return (
       <html lang={locale}>
