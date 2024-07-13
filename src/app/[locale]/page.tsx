@@ -1,19 +1,40 @@
 import { SanityDocument } from "@sanity/client";
-import { startQuery } from "../../sanity/lib/queries";
+import { startQueryhu, startQueryde, startQueryen } from "../../sanity/lib/queries";
 import { sanityFetch } from "../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react'
 import { getTranslations } from "next-intl/server";
 import {unstable_setRequestLocale} from 'next-intl/server';
 
+
 const Page = async ({params: {locale}}) => {
     unstable_setRequestLocale(locale);
-    const [post, t] = await Promise.all([
-        sanityFetch<SanityDocument>({
-            query: startQuery,
-        }),
-        getTranslations('Index')
-    ]) 
-
+    let startQueryLang:string = "startQuery" + locale
+    switch(locale) {
+        case "de":{
+            const [post, t] = await Promise.all([
+                sanityFetch<SanityDocument>({
+                    query: startQueryde,
+                }),
+                getTranslations('Index')
+            ]) 
+        }
+        case "en":{
+            const [post, t] = await Promise.all([
+                sanityFetch<SanityDocument>({
+                    query: startQueryen,
+                }),
+                getTranslations('Index')
+            ])
+        }
+        case "hu":{
+            const [post, t] = await Promise.all([
+                sanityFetch<SanityDocument>({
+                    query: startQueryhu,
+                }),
+                getTranslations('Index')
+            ]) 
+        }
+    }
     return (
         <div className="flex justify-center">
             <div className="bg-white py-24 sm:py-32">
