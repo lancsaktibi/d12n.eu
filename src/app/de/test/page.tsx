@@ -7,7 +7,7 @@ import {unstable_setRequestLocale} from 'next-intl/server';
 
 const Page = async ({params: {locale}}) => {
     const post = await sanityFetch<SanityDocument>({
-        query: startQuery,
+        query: startQueryde,
     });
 
     unstable_setRequestLocale(locale);
