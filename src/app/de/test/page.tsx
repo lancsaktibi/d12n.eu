@@ -1,5 +1,5 @@
 import { SanityDocument } from "@sanity/client";
-import { startQuery } from "../../../sanity/lib/queries";
+import { startQueryde } from "../../../sanity/lib/queries";
 import { sanityFetch } from "../../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react';
 import { getTranslations } from "next-intl/server";
