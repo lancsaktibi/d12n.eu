@@ -8,33 +8,13 @@ import {unstable_setRequestLocale} from 'next-intl/server';
 
 const Page = async ({params: {locale}}) => {
     unstable_setRequestLocale(locale);
-    let startQueryLang:string = "startQuery" + locale
-    switch(locale) {
-        case "de":{
-            const [post, t] = await Promise.all([
-                sanityFetch<SanityDocument>({
-                    query: startQueryde,
-                }),
-                getTranslations('Index')
-            ]) 
-        }
-        case "en":{
-            const [post, t] = await Promise.all([
-                sanityFetch<SanityDocument>({
-                    query: startQueryen,
-                }),
-                getTranslations('Index')
-            ])
-        }
-        case "hu":{
-            const [post, t] = await Promise.all([
-                sanityFetch<SanityDocument>({
-                    query: startQueryhu,
-                }),
-                getTranslations('Index')
-            ]) 
-        }
-    }
+    const [post, t] = await Promise.all([
+        sanityFetch<SanityDocument>({
+            query: startQueryhu,
+        }),
+        getTranslations('Index')
+    ]) 
+    
     return (
         <div className="flex justify-center">
             <div className="bg-white py-24 sm:py-32">
