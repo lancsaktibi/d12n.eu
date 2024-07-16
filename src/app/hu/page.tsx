@@ -36,4 +36,6 @@ const Page = async ({params: {locale}}) => {
     );
 };
 
+export const dynamic = 'force-dynamic';
+
 export default Page;
