@@ -20,3 +20,18 @@ export async function sanityFetch<QueryResponse>({
               next:{revalidate:0}
         });
 }
+
+export async function sanityFetchPosts<QueryResponse>({
+    query,
+    params = DEFAULT_PARAMS,
+    tags = DEFAULT_TAGS,
+}: {
+    query: string;
+    params?: QueryParams;
+    tags?: string[];
+}): Promise<QueryResponse[]> {
+    return client
+        .fetch<QueryResponse[]>(query, params, {
+              next:{revalidate:0}
+        });
+}
