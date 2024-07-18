@@ -32,7 +32,7 @@ const Page = async ({params: {locale}}) => {
                     <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                         {posts.map((post) =>
                             <React.Fragment key={post._id}>
-                                <div>{post.title}</div>
+                                <Card key={post._id} post={post} />
                             </React.Fragment>  
                         )}             
                     </div>    

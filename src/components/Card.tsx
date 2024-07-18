@@ -1,8 +1,8 @@
 import { type SanityDocument } from "next-sanity"
 import { PortableText } from "@portabletext/react"
-import { type Post } from "../sanity/lib/queries"
+import { type Post } from "../sanity/lib/sanityFetch"
 
-export default function Card(post: Post) {
+export default function Card({ post }: { post: Post }) {
     return (
         <article className="flex max-w-xl flex-col items-start justify-between">
             <div className="flex items-center gap-x-4 text-xs">
