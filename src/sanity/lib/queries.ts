@@ -6,3 +6,4 @@ export const startQueryHu = groq`*[categories == 'start' && lang == 'hu'][0]`
 export const pbListQueryDe = groq`*[categories == 'pb' && lang == 'de']`
 export const pbListQueryEn = groq`*[categories == 'pb' && lang == 'en']`
 export const pbListQueryHu = groq`*[categories == 'pb' && lang == 'en']`
+export const pbPostQueryDe = groq`*[categories == 'pb' && lang == 'de' && slug.current == $slug][0]`

@@ -1,7 +1,14 @@
 'only server'
 
 import { client } from "./client";
-import { startQueryDe, pbListQueryDe, startQueryEn, pbListQueryEn, startQueryHu, pbListQueryHu } from "./queries";
+import { 
+    startQueryDe, 
+    pbListQueryDe, 
+    startQueryEn, 
+    pbListQueryEn, 
+    startQueryHu, 
+    pbListQueryHu,
+    pbPostQueryDe } from "./queries";
 import type { ImageAsset, Slug } from '@sanity/types'
 import type { PortableTextBlock } from '@portabletext/types'
 
@@ -28,6 +35,12 @@ export async function getAllPostsEn(): Promise<Post[]> {
 export async function getAllPostsHu(): Promise<Post[]> {
     return (await client.fetch(pbListQueryHu));
 }
+
+export async function getPostDe(slug: string): Promise<Post> {
+    return (await client.fetch(pbPostQueryDe, { slug }));
+}
+
+
 export interface Post {
     _id: string
     _createdAt: string
