@@ -1,6 +1,4 @@
-import { SanityDocument } from "@sanity/client";
-import { startQueryde, pbListQueryde, type Post } from "../../../sanity/lib/queries";
-import { sanityFetch, sanityFetchPosts } from "../../../sanity/lib/sanityFetch";
+import { getStartDe, getAllPostsDe } from "../../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react';
 import { getTranslations } from "next-intl/server";
 import {unstable_setRequestLocale} from 'next-intl/server';
@@ -10,12 +8,8 @@ import React from "react";
 const Page = async ({params: {locale}}) => {
     unstable_setRequestLocale(locale);
     const [start, posts = [], t] = await Promise.all([
-        sanityFetch<SanityDocument>({
-            query: startQueryde,
-        }),
-        sanityFetchPosts<[SanityDocument]>({
-            query: pbListQueryde,
-        }),
+        getStartDe(),
+        getAllPostsDe(),
         getTranslations('Index')
     ])
 

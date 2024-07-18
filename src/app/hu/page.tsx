@@ -1,6 +1,4 @@
-import { SanityDocument } from "@sanity/client";
-import { startQueryhu, startQueryde, startQueryen } from "../../sanity/lib/queries";
-import { sanityFetch } from "../../sanity/lib/sanityFetch";
+import { getStartHu, getAllPostsHu } from "../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react'
 import { getTranslations } from "next-intl/server";
 import {unstable_setRequestLocale} from 'next-intl/server';
@@ -8,12 +6,11 @@ import {unstable_setRequestLocale} from 'next-intl/server';
 
 const Page = async ({params: {locale}}) => {
     unstable_setRequestLocale(locale);
-    const [post, t] = await Promise.all([
-        sanityFetch<SanityDocument>({
-            query: startQueryhu,
-        }),
+    const [start, posts = [], t] = await Promise.all([
+        getStartHu(),
+        getAllPostsHu(),
         getTranslations('Index')
-    ]) 
+    ])
     
     return (
         <div className="flex justify-center">
@@ -21,10 +18,10 @@ const Page = async ({params: {locale}}) => {
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:mx-0">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                            {post.title}
+                            {start.title}
                         </h2>
                         <div className="mt-2 text-lg leading-8 text-gray-600">
-                            <PortableText value={post.body} />
+                            <PortableText value={start.body} />
                         </div>
                         <div className="mt-2 text-lg leading-8 text-gray-600">
                             {t('title')}

@@ -1,49 +1,42 @@
 'only server'
 
-import type { QueryParams } from "@sanity/client";
 import { client } from "./client";
+import { startQueryDe, pbListQueryDe, startQueryEn, pbListQueryEn, startQueryHu, pbListQueryHu } from "./queries";
+import type { ImageAsset, Slug } from '@sanity/types'
+import type { PortableTextBlock } from '@portabletext/types'
 
-const DEFAULT_PARAMS = {} as QueryParams;
-const DEFAULT_TAGS = [] as string[];
-
-export async function sanityFetch<QueryResponse>({
-    query,
-    params = DEFAULT_PARAMS,
-    tags = DEFAULT_TAGS,
-}: {
-    query: string;
-    params?: QueryParams;
-    tags?: string[];
-}): Promise<QueryResponse> {
-    return client
-        .fetch<QueryResponse>(query, params, {
-              next:{revalidate:0}
-        });
+export async function getStartDe(): Promise<Post> {
+    return (await client.fetch(startQueryDe));
 }
 
-export async function sanityFetchPosts<QueryResponse>({
-    query,
-    params = DEFAULT_PARAMS,
-    tags = DEFAULT_TAGS,
-}: {
-    query: string;
-    params?: QueryParams;
-    tags?: string[];
-}): Promise<Post[]> {
-    return client
-        .fetch<Post[]>(query, params, {
-              next:{revalidate:0}
-        });
+export async function getStartEn(): Promise<Post> {
+    return (await client.fetch(startQueryEn));
 }
 
+export async function getStartHu(): Promise<Post> {
+    return (await client.fetch(startQueryHu));
+}
+
+export async function getAllPostsDe(): Promise<Post[]> {
+    return (await client.fetch(pbListQueryDe));
+}
+
+export async function getAllPostsEn(): Promise<Post[]> {
+    return (await client.fetch(pbListQueryEn));
+}
+
+export async function getAllPostsHu(): Promise<Post[]> {
+    return (await client.fetch(pbListQueryHu));
+}
 export interface Post {
     _id: string
+    _createdAt: string
     title?: string
     coverImage?: any
-    date?: string
+    mainImage?: ImageAsset
     _updatedAt?: string
     excerpt?: string
     author?: string
-    slug?: string
-    content?: any
+    slug?: Slug
+    body: PortableTextBlock[]
   }
