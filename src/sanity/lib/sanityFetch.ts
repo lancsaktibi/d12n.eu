@@ -29,9 +29,21 @@ export async function sanityFetchPosts<QueryResponse>({
     query: string;
     params?: QueryParams;
     tags?: string[];
-}): Promise<QueryResponse[]> {
+}): Promise<Post[]> {
     return client
-        .fetch<QueryResponse[]>(query, params, {
+        .fetch<Post[]>(query, params, {
               next:{revalidate:0}
         });
 }
+
+export interface Post {
+    _id: string
+    title?: string
+    coverImage?: any
+    date?: string
+    _updatedAt?: string
+    excerpt?: string
+    author?: string
+    slug?: string
+    content?: any
+  }
