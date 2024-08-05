@@ -15,7 +15,7 @@ export default function Card({ post }: { post: Post }) {
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                     <a href={`/${post.lang}/${post.slug.current}`}>
                     <span className="absolute inset-0"></span>
-                    {post.title}e/schumpeter-elitentheorie
+                    {post.title}
                     </a>
                 </h3>
                 <div className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
