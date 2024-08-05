@@ -1,4 +1,4 @@
-import { getStartHu, getAllPostsHu } from "../../sanity/lib/sanityFetch";
+import { getStartHu, getAllPtPostsHu } from "../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react'
 import { getTranslations } from "next-intl/server";
 import {unstable_setRequestLocale} from 'next-intl/server';
@@ -8,7 +8,7 @@ const Page = async ({params: {locale}}) => {
     unstable_setRequestLocale(locale);
     const [start, posts = [], t] = await Promise.all([
         getStartHu(),
-        getAllPostsHu(),
+        getAllPtPostsHu(),
         getTranslations('Index')
     ])
     

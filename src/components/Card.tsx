@@ -9,11 +9,11 @@ export default function Card({ post }: { post: Post }) {
                 <time className="text-gray-500">
                     {post._createdAt}
                 </time>
-                <a href="#" className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">pb</a>
+                <a href="#" className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">pt</a>
             </div>
             <div className="group relative">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    <a href={`/post/${post.slug.current}`}>
+                    <a href={`/${post.lang}/${post.slug.current}`}>
                     <span className="absolute inset-0"></span>
                     {post.title}
                     </a>

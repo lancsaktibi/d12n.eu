@@ -3,12 +3,12 @@
 import { client } from "./client";
 import { 
     startQueryDe, 
-    pbListQueryDe, 
+    ptListQueryDe, 
     startQueryEn, 
-    pbListQueryEn, 
+    ptListQueryEn, 
     startQueryHu, 
-    pbListQueryHu,
-    pbPostQueryDe } from "./queries";
+    ptListQueryHu,
+    ptPostQueryDe } from "./queries";
 import type { ImageAsset, Slug } from '@sanity/types'
 import type { PortableTextBlock } from '@portabletext/types'
 
@@ -24,20 +24,20 @@ export async function getStartHu(): Promise<Post> {
     return (await client.fetch(startQueryHu));
 }
 
-export async function getAllPostsDe(): Promise<Post[]> {
-    return (await client.fetch(pbListQueryDe));
+export async function getAllPtPostsDe(): Promise<Post[]> {
+    return (await client.fetch(ptListQueryDe));
 }
 
-export async function getAllPostsEn(): Promise<Post[]> {
-    return (await client.fetch(pbListQueryEn));
+export async function getAllPtPostsEn(): Promise<Post[]> {
+    return (await client.fetch(ptListQueryEn));
 }
 
-export async function getAllPostsHu(): Promise<Post[]> {
-    return (await client.fetch(pbListQueryHu));
+export async function getAllPtPostsHu(): Promise<Post[]> {
+    return (await client.fetch(ptListQueryHu));
 }
 
-export async function getPostDe(slug: string): Promise<Post> {
-    return (await client.fetch(pbPostQueryDe, { slug }));
+export async function getPtPostDe(slug: string): Promise<Post> {
+    return (await client.fetch(ptPostQueryDe, { slug }));
 }
 
 
@@ -51,5 +51,6 @@ export interface Post {
     excerpt?: string
     author?: string
     slug?: Slug
+    lang: string 
     body: PortableTextBlock[]
   }

@@ -1,4 +1,4 @@
-import { getPostDe } from "../../../sanity/lib/sanityFetch";
+import { getPtPostDe } from "../../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react'
 import { getTranslations } from "next-intl/server";
 import {unstable_setRequestLocale} from 'next-intl/server';
@@ -6,7 +6,7 @@ import {unstable_setRequestLocale} from 'next-intl/server';
 
 const Page = async ({ params }: { params: { slug: string } }) => {
     const [post] = await Promise.all([
-        getPostDe(params.slug),
+        getPtPostDe(params.slug),
     ])
     
     return (

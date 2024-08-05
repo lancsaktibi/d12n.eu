@@ -1,4 +1,4 @@
-import { getStartDe, getAllPostsDe } from "../../sanity/lib/sanityFetch";
+import { getStartDe, getAllPtPostsDe } from "../../sanity/lib/sanityFetch";
 import { PortableText } from '@portabletext/react'
 import { getTranslations } from "next-intl/server";
 import {unstable_setRequestLocale} from 'next-intl/server';
@@ -8,7 +8,7 @@ const Page = async ({params: {locale}}) => {
     unstable_setRequestLocale(locale);
     const [start, posts = [], t] = await Promise.all([
         getStartDe(),
-        getAllPostsDe(),
+        getAllPtPostsDe(),
         getTranslations('Index')
     ])
     
@@ -25,6 +25,9 @@ const Page = async ({params: {locale}}) => {
                         </div>
                         <div className="mt-2 text-lg leading-8 text-gray-600">
                             {t('title')}
+                        </div>
+                        <div className="mt-2 text-lg leading-8 text-gray-600">
+                            <a href="/de/pt">Politische Theorie</a>
                         </div>
                     </div>
                 </div>
