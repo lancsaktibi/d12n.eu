@@ -1,3 +1,5 @@
+// short version of an article for the overview page
+
 import { type SanityDocument } from "next-sanity"
 import { PortableText } from "@portabletext/react"
 import { type Post } from "../sanity/lib/sanityFetch"

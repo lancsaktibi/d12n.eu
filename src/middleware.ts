@@ -1,3 +1,5 @@
+// add a language prefix to the page requests
+
 import createMiddleware from 'next-intl/middleware';
 
 export default createMiddleware({
