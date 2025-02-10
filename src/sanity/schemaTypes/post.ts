@@ -1,3 +1,5 @@
+// This is the sanity schema type for posts
+
 import {defineField, defineType} from 'sanity'
 
 export default defineType({

@@ -1,3 +1,5 @@
+// async Funtions to execute the GROQ queries and pull data from the sanity cloud
+
 'only server'
 
 import { client } from "./client";

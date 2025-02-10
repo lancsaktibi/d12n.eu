@@ -32,6 +32,13 @@ The website aims to deliver content in the field of political science, with a pr
 *\src\app\de* - page configuration for the german locale\
 *\src\app\globals.css* - configuration for the tailwind css modules\
 *\src\components\Card.tsx* - short version of an article on the overview page\ 
-*\src\sanity\* - sanity application code added by the sanity plugin\
+*\src\sanity* - sanity application code for the sanity plugin\
 *\src\i18n.ts* - reads locale from the browser and picks a language file\
-*\src\middleware.ts* - adds the language prefix to the page requests\
+*\src\middleware.ts* - adds the language prefix to the page requests
+## Sanity at work
+*\src\sanity\lib\queries.ts* - GROQ syntax to query page text from the sanity cloud\
+*\src\sanity\lib\sanityFetch.ts* - async Funtions to execute the GROQ queries and pull data from the sanity cloud\
+*\src\sanity\schemaTypes* - data structure definitions for the sanity content editor\
+*\src\sanity\schema.ts* - activation of data structures for the sanity content editor\
+## next:
+check Sanity fields to provide pt from the db for the Card component

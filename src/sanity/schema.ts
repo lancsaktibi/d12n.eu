@@ -1,3 +1,5 @@
+// activation of data structures for the sanity content editor
+
 import { type SchemaTypeDefinition } from 'sanity'
 
 import blockContent from './schemaTypes/blockContent'

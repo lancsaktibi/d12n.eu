@@ -1,3 +1,5 @@
+// GROQ syntax to query page text from the Sanity Cloud
+
 import { groq } from "next-sanity";
 
 export const startQueryDe = groq`*[categories == 'start' && lang == 'de'][0]`
