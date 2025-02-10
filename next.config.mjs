@@ -1,3 +1,5 @@
+// next-intl plugin configuration
+
 import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
