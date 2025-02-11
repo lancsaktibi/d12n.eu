@@ -16,7 +16,8 @@ The website aims to deliver content in the field of political science, with a pr
 *netlify.com* - a development platform with build, deploy and serverless backend services for web applications
 ## customisations
 - the github codespace uses the *javascript-node* devcontainer as the development environment\
-- for sanity.io, a *Language* field was added to the blog schema
+- for sanity.io, a *Language* field was added to the blog schema\
+- the *root layout* is moved to the language specific folders as an effect of the next-intl middleware 
 ## project folder structure
 *\messages* - translation values for the various language versions used by the next-intl plugin\
 *\public* - pictures and similar files for public access\
@@ -32,6 +33,7 @@ The website aims to deliver content in the field of political science, with a pr
 *\src\app\de* - page configuration for the german locale\
 *\src\app\globals.css* - configuration for the tailwind css modules\
 *\src\components\Card.tsx* - short version of an article on the overview page\ 
+*\src\components\Navbar.tsx* - navigation bar on top of the pages\ 
 *\src\sanity* - sanity application code for the sanity plugin\
 *\src\i18n.ts* - reads locale from the browser and picks a language file\
 *\src\middleware.ts* - adds the language prefix to the page requests
