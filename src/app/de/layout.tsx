@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import {unstable_setRequestLocale} from 'next-intl/server';
 import { Inter } from "next/font/google";
-import Navbar from "../../components/Navbar";
+import Navbar from "../old/Navbar";
 const locales = ['en', 'de', 'hu'];
 
 // Load the Inter font with the 'swap' display strategy
