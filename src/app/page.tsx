@@ -8,7 +8,7 @@ const Page = async () => {
     
     return (
         <div className="flex justify-center">
-            <div className="bg-white">
+            <div className="bg-white py-24 px-6">
                 <h2 className="text-3xl font-bold">
                     {start.title}
                 </h2>
